@@ -17,7 +17,7 @@ const router = useRouter();
 const successMessage = ref("");
 const errorMessage = ref("");
 
-const statusChoices = ["To Do", "In Progress", "In Review", "Done"];
+const statusChoices = ["Por Hacer", "En Progreso", "En Revisión", "Completado"];
 
 const submitFormData = async () => {
   try {
@@ -26,7 +26,7 @@ const submitFormData = async () => {
       taskData.value
     );
     if (responseData) {
-      successMessage.value = "Task updated successfully!";
+      successMessage.value = "¡Tarea actualizada exitosamente!";
       resetSuccessMessage();
     }
   } catch (err) {
@@ -42,7 +42,7 @@ const getApiData = async () => {
       "http://localhost:8000/tasks/" + route.params.id
     );
     if (responseData) {
-      successMessage.value = "Task data retrieved successfully!";
+      successMessage.value = "¡Datos de la tarea recuperados exitosamente!";
       taskData.value = responseData.data;
       resetSuccessMessage();
     }
@@ -63,7 +63,7 @@ const deleteTaskHandler = async () => {
       });
     }
   } catch (err) {
-    errorMessage.value = "Some error occurred";
+    errorMessage.value = "Ocurrió un error";
     resetErrorMessage();
   }
 };
@@ -110,24 +110,24 @@ onMounted(() => {
       data-aos-ease="ease"
     >
       <div class="flex items-center justify-between mx-auto my-3 px-2 bg-primary">
-        <p class="text-center text-2xl my-3 text-light">UPDATE TASK</p>
+        <p class="text-center text-2xl my-3 text-light">ACTUALIZAR TAREA</p>
         <button
           @click.prevent="deleteTaskHandler"
           class="shadow bg-secondary hover:bg-red-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
         >
-          Delete Task
+          Eliminar Tarea
         </button>
       </div>
       <div class="mb-4">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center" for="title">
-          Title
+          Título
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="title"
             type="text"
-            placeholder="Task Title"
+            placeholder="Título de la Tarea"
             v-model="taskData.title"
           />
           <FontAwesomeIcon
@@ -141,14 +141,14 @@ onMounted(() => {
           class="block text-dark font-bold bg-light px-2 py-1 text-center"
           for="description"
         >
-          Description
+          Descripción
         </label>
         <div class="relative">
           <textarea
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="description"
             type="text"
-            placeholder="Task Description"
+            placeholder="Descripción de la Tarea"
             rows="10"
             v-model="taskData.description"
           ></textarea>
@@ -160,7 +160,7 @@ onMounted(() => {
       </div>
       <div class="mb-4">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center" for="status">
-          Status
+          Estado
         </label>
         <select
           class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -179,20 +179,20 @@ onMounted(() => {
 
       <div class="mb-4">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center" for="dueDate">
-          Due Date
+          Fecha de Vencimiento
         </label>
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="dueDate"
           type="date"
-          placeholder="Select Due Date"
+          placeholder="Seleccione Fecha de Vencimiento"
           v-model="taskData.dueDate"
         />
       </div>
       <input
         class="shadow bg-secondary hover:bg-primary transition-all duration-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded my-3"
         type="submit"
-        value="Update Task"
+        value="Actualizar Tarea"
       />
     </form>
   </div>

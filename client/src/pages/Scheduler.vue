@@ -40,7 +40,7 @@ const getApiData = async () => {
     }
   } catch (err) {
     console.log(err);
-    errorMessage.value = "Some error occurred";
+    errorMessage.value = "Ocurrió un error";
   }
 };
 
@@ -106,13 +106,13 @@ const currentMonthAndYear = computed(() => {
         {{ errorMessage }}
       </p>
     </div>
-    <h1 class="text-red-400 text-3xl my-3 text-center">SCHEDULER</h1>
+    <h1 class="text-red-400 text-3xl my-3 text-center">PLANIFICADOR</h1>
     <div class="flex items-center justify-between">
       <button
         className="bg-secondary hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
         @click="previousMonth"
       >
-        Previous Month
+        Mes Anterior
       </button>
       <p className="font-bold text-2xl text-red-400">
         {{ currentMonthAndYear }}
@@ -121,7 +121,7 @@ const currentMonthAndYear = computed(() => {
         className="bg-secondary hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
         @click="nextMonth"
       >
-        Next Month
+        Mes Siguiente
       </button>
     </div>
     <div

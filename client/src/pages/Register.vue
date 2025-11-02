@@ -31,12 +31,12 @@ const submitFormData = async () => {
       registerData.value
     );
     if (responseData) {
-      successMessage.value = "Registration successful!";
+      successMessage.value = "¡Registro exitoso!";
       resetSuccessMessage();
       router.push({ name: "Login" });
     }
   } catch (err) {
-    errorMessage.value = "Registration failed. Please try again.";
+    errorMessage.value = "Registro fallido. Por favor, intente de nuevo.";
     resetErrorMessage();
   }
 };
@@ -94,19 +94,19 @@ onMounted(() => {
       data-aos-ease="ease"
     >
       <div class="text-center mb-6">
-        <h2 class="text-3xl font-bold text-gray-800">REGISTER</h2>
+        <h2 class="text-3xl font-bold text-gray-800">REGISTRARSE</h2>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="username">
-          Username
+          Nombre de usuario
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="username"
             type="text"
-            placeholder="Enter your username"
+            placeholder="Ingrese su nombre de usuario"
             v-model="registerData.username"
             required
           />
@@ -119,14 +119,14 @@ onMounted(() => {
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="firstName">
-          First Name
+          Nombre
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="firstName"
             type="text"
-            placeholder="Enter your first name"
+            placeholder="Ingrese su nombre"
             v-model="registerData.firstName"
             required
           />
@@ -139,14 +139,14 @@ onMounted(() => {
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="lastName">
-          Last Name
+          Apellido
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="lastName"
             type="text"
-            placeholder="Enter your last name"
+            placeholder="Ingrese su apellido"
             v-model="registerData.lastName"
             required
           />
@@ -159,14 +159,14 @@ onMounted(() => {
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="email">
-          Email
+          Correo electrónico
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Ingrese su correo electrónico"
             v-model="registerData.email"
             required
           />
@@ -179,14 +179,14 @@ onMounted(() => {
 
       <div class="mb-6">
         <label class="block text-gray-700 font-bold mb-2" for="password">
-          Password
+          Contraseña
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
             id="password"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Ingrese su contraseña"
             v-model="registerData.password"
             required
           />
@@ -200,12 +200,12 @@ onMounted(() => {
       <input
         class="w-full shadow bg-blue-500 hover:bg-blue-700 transition-all duration-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
         type="submit"
-        value="Register"
+        value="Registrarse"
       />
 
       <div class="text-center mt-4">
         <router-link to="/login" class="text-blue-500 hover:text-blue-700">
-          Already have an account? Sign in
+          ¿Ya tienes una cuenta? Inicia sesión
         </router-link>
       </div>
     </form>

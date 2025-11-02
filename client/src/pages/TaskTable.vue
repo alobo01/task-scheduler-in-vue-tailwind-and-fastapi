@@ -27,7 +27,7 @@ const getApiData = async () => {
       isLoading.value = false;
     }
   } catch (err) {
-    errorMessage.value = "Some error occurred";
+    errorMessage.value = "Ocurrió un error";
   }
 };
 
@@ -99,7 +99,7 @@ onMounted(() => {
         {{ sortByParams }}
       </p>
     </div>
-    <h1 class="text-tertiary bg-white py-2 text-3xl my-3 text-center">TASKS</h1>
+    <h1 class="text-tertiary bg-white py-2 text-3xl my-3 text-center">TAREAS</h1>
     <div class="flex flex-col">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -109,7 +109,7 @@ onMounted(() => {
                 <tr>
                   <th scope="col" class="px-6 py-4">#</th>
                   <th scope="col" class="px-6 py-4" @click="sortByParam('title')">
-                    Title
+                    Título
                     <svg v-if="sortingParams.name === 'title' && sortingParams.reverse"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -146,7 +146,7 @@ onMounted(() => {
                     </svg>
                   </th>
                   <th scope="col" class="px-6 py-4" @click="sortByParam('description')">
-                    Description
+                    Descripción
                     <svg v-if="sortingParams.name === 'description' && sortingParams.reverse"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -183,7 +183,7 @@ onMounted(() => {
                     </svg>
                   </th>
                   <th scope="col" class="px-6 py-4 flex justify-around">
-                    Due Date
+                    Fecha de Vencimiento
                     <svg
                       @click="sortByParam('dueDate')"
                       xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ onMounted(() => {
                       id="first_name"
                       v-model="title"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Search Title"
+                      placeholder="Buscar Título"
                       required
                     />
                   </td>
@@ -221,7 +221,7 @@ onMounted(() => {
                       id="first_name"
                       v-model="description"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Search Description"
+                      placeholder="Buscar Descripción"
                       required
                     />
                   </td>

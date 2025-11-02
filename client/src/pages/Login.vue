@@ -23,14 +23,14 @@ const submitFormData = async () => {
             loginData.value
         );
         if (responseData) {
-            successMessage.value = "Login successful!";
+            successMessage.value = "¡Inicio de sesión exitoso!";
             resetSuccessMessage();
             // Store token or user data as needed
             localStorage.setItem('token', responseData.data.token);
             router.push({ name: "Dashboard" });
         }
     } catch (err) {
-        errorMessage.value = "Invalid credentials. Please try again.";
+        errorMessage.value = "Credenciales inválidas. Por favor, intente de nuevo.";
         resetErrorMessage();
     }
 };
@@ -83,19 +83,19 @@ onMounted(() => {
             data-aos-ease="ease"
         >
             <div class="text-center mb-6">
-                <h2 class="text-3xl font-bold text-gray-800">LOGIN</h2>
+                <h2 class="text-3xl font-bold text-gray-800">INICIAR SESIÓN</h2>
             </div>
             
             <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2" for="email">
-                    Email
+                    Correo electrónico
                 </label>
                 <div class="relative">
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
                         id="email"
                         type="email"
-                        placeholder="Enter your email"
+                        placeholder="Ingrese su correo electrónico"
                         v-model="loginData.email"
                         required
                     />
@@ -108,14 +108,14 @@ onMounted(() => {
             
             <div class="mb-6">
                 <label class="block text-gray-700 font-bold mb-2" for="password">
-                    Password
+                    Contraseña
                 </label>
                 <div class="relative">
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
                         id="password"
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Ingrese su contraseña"
                         v-model="loginData.password"
                         required
                     />
@@ -129,12 +129,12 @@ onMounted(() => {
             <input
                 class="w-full shadow bg-blue-500 hover:bg-blue-700 transition-all duration-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
                 type="submit"
-                value="Login"
+                value="Iniciar sesión"
             />
             
             <div class="text-center mt-4">
                 <router-link to="/register" class="text-blue-500 hover:text-blue-700">
-                    Don't have an account? Sign up
+                    ¿No tienes una cuenta? Regístrate
                 </router-link>
             </div>
         </form>

@@ -11,7 +11,7 @@
         <a
           class="font-semibold text-light dark:text-neutral-400"
           href="https://tailwind-elements.com/"
-          > Fast Scheduler </a
+          > Planificador Rápido </a
         >
       </div>
       <!-- Social network icons container -->
