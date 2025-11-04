@@ -33,7 +33,7 @@ const cookieValue = getCookie('fakesession');
 
 console.log('Cookie : ', cookieValue);
 
-const statusChoices = ["To Do", "In Progress", "In Review", "Done"]
+const statusChoices = ["Por Hacer", "En Progreso", "En Revisión", "Completado"]
 
 onMounted(() => {
   AOS.init();
@@ -44,7 +44,7 @@ const submitFormData = async () => {
   try {
     const responseData = await axios.post('http://localhost:8000/tasks', taskData.value)
     if (responseData) {
-      successMessage.value = 'Task created successfully!'
+      successMessage.value = '¡Tarea creada exitosamente!'
       resetSuccessMessage();
     }
   } catch (err) {
@@ -76,17 +76,17 @@ const resetSuccessMessage = () => {
         data-aos="fade-left"
         data-aos-duration="500"
         data-aos-ease="ease">
-      <p class="text-center bg-tertiary text-2xl my-3 p-2 text-white">ADD TASK</p>
+      <p class="text-center bg-tertiary text-2xl my-3 p-2 text-white">AÑADIR TAREA</p>
       <div class="mb-4">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center" for="title">
-          Title
+          Título
         </label>
         <div class="relative">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="title"
             type="text"
-            placeholder="Task Title"
+            placeholder="Título de la Tarea"
             v-model="taskData.title"
           />
           <font-awesome-icon 
@@ -100,14 +100,14 @@ const resetSuccessMessage = () => {
           class="block text-dark font-bold bg-light px-2 py-1 text-center"
           for="description"
         >
-          Description
+          Descripción
         </label>
         <div class="relative">
           <textarea
             class="shadow appearance-none border rounded w-full py-2 px-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="description"
             type="text"
-            placeholder="Task Description"
+            placeholder="Descripción de la Tarea"
             rows="10"
             v-model="taskData.description"
           ></textarea>
@@ -119,7 +119,7 @@ const resetSuccessMessage = () => {
       </div>
       <div class="mb-4 flex justify-between items-center">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center w-1/2" for="status">
-          Status
+          Estado
         </label>
         <select
           class="form-select appearance-none block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -132,20 +132,20 @@ const resetSuccessMessage = () => {
 
       <div class="mb-4 flex justify-between items-center">
         <label class="block text-dark font-bold bg-light px-2 py-1 text-center w-1/2" for="dueDate">
-          Due Date
+          Fecha de Vencimiento
         </label>
         <input
           class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="dueDate"
           type="date"
-          placeholder="Select Due Date"
+          placeholder="Seleccione Fecha de Vencimiento"
           v-model="taskData.dueDate"
         />
       </div>
       <input
         class="shadow my-2 bg-secondary hover:bg-accent-dark hover:text-dark transition-all duration-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
         type="submit"
-        value="Add Task"
+        value="Añadir Tarea"
       />
     </form>
   </div>

@@ -21,7 +21,7 @@ const getApiData = async () => {
       isLoading.value = false;
     }
   } catch (err) {
-    errorMessage.value = "Some error occurred";
+    errorMessage.value = "Ocurrió un error";
   }
 };
 
@@ -55,7 +55,7 @@ onMounted(() => {
         {{ errorMessage }}
       </p>
     </div>
-    <h1 class="text-light bg-tertiary py-2 text-3xl my-3 text-center">TASKS</h1>
+    <h1 class="text-light bg-tertiary py-2 text-3xl my-3 text-center">TAREAS</h1>
 
     <div
       className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 px-2 gap-2 my-5"
@@ -72,7 +72,7 @@ onMounted(() => {
         <p>
           {{ item.description }}
         </p>
-        <p>Due on {{ item.dueDate }}</p>
+        <p>Vence el {{ item.dueDate }}</p>
       </div>
     </div>
   </div>

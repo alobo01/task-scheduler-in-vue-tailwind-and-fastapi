@@ -44,7 +44,7 @@ const toggleSidebar = () => {
                   <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
-                <span class="ml-3">Dashboard</span>
+                <span class="ml-3">Panel de Control</span>
               </router-link>
             </li>
             <li>
@@ -67,7 +67,7 @@ const toggleSidebar = () => {
                     d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
                   ></path>
                 </svg>
-                <span class="flex-1 ml-3 whitespace-nowrap">Scheduler</span>
+                <span class="flex-1 ml-3 whitespace-nowrap">Planificador</span>
               </router-link>
             </li>
             <li>
@@ -89,7 +89,7 @@ const toggleSidebar = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="flex-1 ml-3 whitespace-nowrap">Add Task</span>
+                <span class="flex-1 ml-3 whitespace-nowrap">Añadir Tarea</span>
               </router-link>
             </li>
             <li>
@@ -111,7 +111,7 @@ const toggleSidebar = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="flex-1 ml-3 whitespace-nowrap">Tasks</span>
+                <span class="flex-1 ml-3 whitespace-nowrap">Tareas</span>
               </router-link>
             </li>
           </ul>
@@ -124,7 +124,7 @@ const toggleSidebar = () => {
   >
     <!-- logo -->
     <h1 class="w-3/12 text-light">
-      Task Scheduler
+      Planificador de Tareas
     </h1>
 
     <!-- navigation -->
@@ -133,27 +133,27 @@ const toggleSidebar = () => {
         <li
           class="p-4 border-b-2 border-success border-opacity-0 hover:border-opacity-100 hover:text-success duration-200 cursor-pointer active"
         >
-          <router-link to="/">Home</router-link>
+          <router-link to="/">Inicio</router-link>
         </li>
         <li
           class="p-4 border-b-2 border-success border-opacity-0 hover:border-opacity-100 hover:text-success duration-200 cursor-pointer"
         >
-          <router-link to="/scheduler">Scheduler</router-link>
+          <router-link to="/scheduler">Planificador</router-link>
         </li>
         <li
           class="p-4 border-b-2 border-success border-opacity-0 hover:border-opacity-100 hover:text-success duration-200 cursor-pointer"
         >
-          <router-link to="/add">Add Task</router-link>
+          <router-link to="/add">Añadir Tarea</router-link>
         </li>
         <li
           class="p-4 border-b-2 border-success border-opacity-0 hover:border-opacity-100 hover:text-success duration-200 cursor-pointer"
         >
-          <router-link to="/tasks">Tasks</router-link>
+          <router-link to="/tasks">Tareas</router-link>
         </li>
         <li
           class="p-4 border-b-2 border-success border-opacity-0 hover:border-opacity-100 hover:text-success duration-200 cursor-pointer"
         >
-          <router-link to="/task-table">Task Table</router-link>
+          <router-link to="/task-table">Tabla de Tareas</router-link>
         </li>
       </ul>
       <ul class="flex items-center">
