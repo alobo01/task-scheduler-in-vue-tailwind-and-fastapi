@@ -17,7 +17,7 @@ The project back-end is created using Fast API in Python and Vue is used for the
 
 It is a simple Kanban board application where you have four status 'To Do', 'In Progress', 'In Review' and 'Done'. You can create a generic task item and then through Kanban drag and drop dashboard, you can move items and save the updated status.
 
-It has supoort for multi-user authentication.
+It has support for multi-user authentication.
 
 
 ## 🚀 Deployment Instructions (Docker Compose)
@@ -92,11 +92,13 @@ Mobile menu view, a sidebar opens which displays menu items on smaller screens.
 
 ## ⚙️ Docker Configuration
 
+- **Services:**
 	- `db`: Uses official PostgreSQL 15 image, persistent volume `db_data`
 	- `web`: FastAPI backend, environment variables for DB connection
 	- `alembic`: Runs Alembic migrations after DB is ready
 	- `client`: Builds and serves Vue app on port 8080
 
+- **Environment Variables:**
 	- Database credentials and connection info are set for backend and Alembic containers.
 	- Default values:
 		- `DATABASE_USERNAME=taskscheduler_user`
@@ -105,8 +107,10 @@ Mobile menu view, a sidebar opens which displays menu items on smaller screens.
 		- `DATABASE_PORT=5432`
 		- `DATABASE_NAME=taskdb`
 
+- **Volumes:**
 	- `db_data`: Persists PostgreSQL data
 
+- **Dependencies:**
 	- `web` and `alembic` depend on `db`
 	- `client` depends on `web`
 
@@ -125,10 +129,6 @@ graph TD
     db --> alembic
     web --> client
 
-    alembic -.-> db
-    web -.-> db
-    client -.-> web
-
     subgraph Volumes
         db_data[(db_data)]
     end
@@ -141,6 +141,7 @@ graph TD
 - `alembic` waits for `db` to be ready, then runs migrations.
 - `client` depends on `web` to be running.
 - The `db_data` volume persists database data.
+
 ## ⚙️ Backend Database Configuration
 
 The backend uses environment variables to configure the PostgreSQL database connection. You can set these variables in your environment or in a `.env` file before starting the FastAPI server:
